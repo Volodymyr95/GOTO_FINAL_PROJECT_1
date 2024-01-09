@@ -1,2 +1,4 @@
-package service;public class BruteForceService {
+package service;
+
+public class BruteForceService {
 }

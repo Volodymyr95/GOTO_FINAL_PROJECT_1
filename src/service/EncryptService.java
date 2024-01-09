@@ -1,2 +1,4 @@
-package service;public class EncryptService {
+package service;
+
+public class EncryptService {
 }
