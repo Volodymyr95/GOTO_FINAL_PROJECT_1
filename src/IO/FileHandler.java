@@ -6,7 +6,7 @@ public class FileHandler {
 
     public String readFileToString(String filePath) {
         StringBuilder content = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath), StandardCharsets.UTF_8))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(filePath)))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 content.append(line).append("\n");
