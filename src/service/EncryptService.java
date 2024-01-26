@@ -1,7 +1,8 @@
 package service;
-import java.io.File;
-public class EncryptService {
 
+import java.io.File;
+
+public class EncryptService {
     public String encrypt(String text, int key) {
         StringBuilder result = new StringBuilder();
         for (char character : text.toCharArray()) {
@@ -17,6 +18,6 @@ public class EncryptService {
             }
         }
         return result.toString();
-}
+    }
 
 }
