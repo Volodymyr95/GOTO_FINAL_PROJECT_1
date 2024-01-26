@@ -10,7 +10,7 @@ public class DecryptService {
                 char base = Character.isUpperCase(character) ? 'A' : 'a';
                 char shiftedChar = (char) ((character - base + key) % 26 + base);
                 if (shiftedChar < base) {
-                    shiftedChar += 26;  // Обработка отрицательного смещения
+                    shiftedChar += 26;
                 }
                 result.append(shiftedChar);
             } else {
