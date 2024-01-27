@@ -1,5 +1,5 @@
 package model;
 
-public enum Model {
+public enum Mode {
     ENCRYPT, DECRYPT, BRUTE_FORCE
 }
