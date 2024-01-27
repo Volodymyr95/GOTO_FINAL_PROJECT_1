@@ -6,24 +6,30 @@ public class BruteForceService {
 
     public String bruteForceDecrypt(String ciphertext) {
         DecryptService decryptService = new DecryptService();
+        String bestDecryptedText = "";
+        int bestKey = 0;
         for (int key = 0; key < 26; key++) {
-            String decryptedText = decryptService.decrypt(ciphertext, key);
+            String decryptedText = decryptService.decrypt(ciphertext, -key);
 
-            if (containsKeywords(decryptedText)) {
-                return decryptedText;
+            if (score(decryptedText) > score(bestDecryptedText)) {
+                bestDecryptedText = decryptedText;
+                bestKey = key;
             }
-        }
 
-        return null;
+        }
+        return bestDecryptedText;
     }
 
-    private boolean containsKeywords(String text) {
+    private int score(String decryptedText) {
         KeywordDictionary keywordDictionary = new KeywordDictionary();
+        int keywordCount = 0;
+
         for (String keyword : keywordDictionary.KEYWORDS) {
-            if (!text.toUpperCase().contains(keyword)) {
-                return false;
+            if (decryptedText.toUpperCase().contains(keyword)) {
+                keywordCount++;
             }
         }
-        return true;
+
+        return keywordCount;
     }
 }
