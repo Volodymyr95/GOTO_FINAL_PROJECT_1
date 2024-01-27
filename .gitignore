@@ -5,6 +5,7 @@ out/
 .gitignore
 *.iml
 .idea
+*.MF
 
 ### Eclipse ###
 .apt_generated
