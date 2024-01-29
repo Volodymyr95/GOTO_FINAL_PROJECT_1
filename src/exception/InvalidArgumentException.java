@@ -1,4 +1,4 @@
-package com.crypto.exception;
+package exception;
 
 public class InvalidArgumentException extends RuntimeException {
 
