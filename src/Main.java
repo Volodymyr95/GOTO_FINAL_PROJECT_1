@@ -57,9 +57,5 @@ public class Main {
             }
         }
     }
-<<<<<<< HEAD
 
-
-=======
->>>>>>> new-branch
 }
