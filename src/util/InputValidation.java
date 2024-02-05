@@ -1,14 +1,14 @@
-package com.crypto.util;
+package util;
 
-import com.crypto.exception.InvalidArgumentException;
-import com.crypto.model.Mode;
+import exception.InvalidArgumentException;
+import model.Mode;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class InputValidation {
 
-    public static void validateInput(String[] args) {
+    public void validateInput(String[] args) {
         if (args.length < 2) {
             throw new InvalidArgumentException("Command and File are required!");
         }
@@ -17,7 +17,7 @@ public class InputValidation {
         }
     }
 
-    public static void validateCommand(String command) {
+    public void validateCommand(String command) {
         boolean isCommandExist = false;
         for (Mode mode : Mode.values()) {
             if (mode.toString().equals(command)) {
@@ -31,7 +31,7 @@ public class InputValidation {
         }
     }
 
-    public static void validateFilePath(String path) {
+    public void validateFilePath(String path) {
         if (path.isBlank()) {
             throw new InvalidArgumentException("Filename is empty!");
         }
@@ -40,4 +40,11 @@ public class InputValidation {
         }
     }
 
+    public void validateKey(String key) {
+        for (int i = 0; i < key.length(); i++) {
+            if (!Character.isDigit(key.charAt(i))) {
+                throw new InvalidArgumentException("Enter numbers in the key argument");
+            }
+        }
+    }
 }
